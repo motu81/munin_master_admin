@@ -85,5 +85,4 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # Munin configuration file (absolute path)
-#MUNIN_CONF_FILE='/opt/local/etc/munin/munin-conf.d/munin-master-admin.conf'
-MUNIN_CONF_FILE='/tmp/munin-master-admin.conf'
+MUNIN_CONF_FILE='/opt/local/etc/munin/munin-conf.d/munin-master-admin.conf'
