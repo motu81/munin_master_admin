@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load bootstrap3 %}
+
+{% block content %}
+	<h1>Add Group</h1>
+	<form method="post" class="form-horizontal" enctype="multipart/form-data" role="form">
+	{% csrf_token  %}
+	{% bootstrap_form form layout='horizontal' %}
+	{% buttons layout='horizontal' submit='OK' %}
+	{% endbuttons %}
+	</form>
+{% endblock  %}
