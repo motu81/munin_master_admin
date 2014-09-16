@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div class="page-header">
+		<h1>Welcome to Munin Admin</h1>
+	</div>
+	<p class="lead">
+		Manage <a href="{% url 'host_list' %}">Hosts</a> you want to monitor and <a href="{% url 'group_list' %}">group</a> them.
+	</p>
+{% endblock  %}
