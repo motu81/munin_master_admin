@@ -3,15 +3,17 @@
 
 {% block content %}
 	<h1>Hosts</h1>
+		<a href="{% url "host_create" %}" class="btn btn-success pull-right"> New </a>
 		<table class="table table-striped table-condensed table-hover">
 		<thead>
 		<tr>
-			<th>Name</th><th>&nbsp;</th>
+			<th>Name</th><th>Group</th><th>&nbsp;</th>
 		</tr>
 		</thead>
 		{% for host in object_list %}
 		<tr>
 			<td>{{ host.name }}</td>
+			<td>{{ host.group }}</td>
 			<td>
 				<form action="{% url "host_delete" host.id %}" method="post" class="confirm-delete">
 					{% csrf_token %}
@@ -21,5 +23,4 @@
 		</tr>
 	    {% endfor %}
 	</table>
-	<a href="{% url "host_create" %}" class="btn btn-success pull-right"> New </a>
 {% endblock  %}
