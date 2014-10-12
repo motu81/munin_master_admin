@@ -9,7 +9,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
 		template = """[{group}{host}] 
 	address {host}
-
+	use_node_name yes
 """
 		with open(settings.MUNIN_CONF_FILE, 'w') as  f:
 			for host in Host.objects.all():
