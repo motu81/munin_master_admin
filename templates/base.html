@@ -25,6 +25,12 @@
 							<li><a href="{% url 'group_list' %}">Groups</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
+						{% if user.is_authenticated %}
+							<li><a href="{% url "password_change" %}">Logged in as <strong>{{ user.username }}</strong></a></li>
+							<li><a href="{% url "logout" %}?next=/">Logout</a></li>
+						{% else %}
+							<li><a href="{% url "login" %}">Login</a></li>
+						{% endif %}
 							<li><a href="/">Back to Munin</a></li>
 					</ul>
 				</div>
