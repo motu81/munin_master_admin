@@ -5,12 +5,12 @@ from django.db import models
 default_length=255
 
 class Group(models.Model):
-	name=models.CharField(max_length=default_length)
+	name=models.CharField(max_length=default_length, unique=True)
 
 	def __unicode__(self):
 		return self.name
 
 class Host(models.Model):
-	name=models.CharField(max_length=default_length)
+	name=models.CharField(max_length=default_length, unique=True)
 	group=models.ForeignKey(Group,null=True,blank=True)
 
