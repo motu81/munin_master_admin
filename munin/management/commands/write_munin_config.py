@@ -3,14 +3,14 @@ from munin.models import Host
 from django.conf import settings
 
 class Command(BaseCommand):
-    args = ''
-    help = 'writes the munin config'
-
-    def handle(self, *args, **options):
+	args = ''
+	help = 'writes the munin config'
+	
+	def handle(self, *args, **options):
 		template = """[{group}{host}] 
-	address {host}
-	use_node_name yes
-"""
+		address {host}
+		use_node_name yes
+		"""
 		with open(settings.MUNIN_CONF_FILE, 'w') as  f:
 			for host in Host.objects.all():
 				group_prefix = ''
