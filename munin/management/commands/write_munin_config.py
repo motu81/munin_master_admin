@@ -7,10 +7,7 @@ class Command(BaseCommand):
 	help = 'writes the munin config'
 	
 	def handle(self, *args, **options):
-		template = """[{group}{host}] 
-		address {host}
-		use_node_name yes
-		"""
+		template = """[{group}{host}]\n\taddress {host}\n\tuse_node_name yes\n"""
 		with open(settings.MUNIN_CONF_FILE, 'w') as  f:
 			for host in Host.objects.all():
 				group_prefix = ''
