@@ -7,7 +7,7 @@ default_length=255
 class Group(models.Model):
 	name=models.CharField(max_length=default_length, unique=True)
 
-	def __unicode__(self):
+	def __str__(self):
 		return self.name
 
 class Host(models.Model):
