@@ -12,6 +12,7 @@ class GroupList(LoginRequiredMixin, ListView):
 
 class GroupCreate(LoginRequiredMixin, CreateView):
 	model = Group
+	fields = '__all__'
 	success_url = reverse_lazy('group_list')
 
 class GroupDelete(LoginRequiredMixin, DeleteView):
@@ -23,6 +24,7 @@ class HostList(LoginRequiredMixin, ListView):
 
 class HostCreate(LoginRequiredMixin, CreateView):
 	model = Host
+	fields = '__all__'
 	success_url = reverse_lazy('host_list')
 
 class HostDelete(LoginRequiredMixin, DeleteView):
